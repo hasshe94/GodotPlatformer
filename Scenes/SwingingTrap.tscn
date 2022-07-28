@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/SwingingTrap.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/trap_suspended_anim_strip_18.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Swing"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -104.1, -0.25, 0, 0.25, 0, 104.1, -0.25, 0, 0.25, 0, -104.1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+
+[node name="SwingingTrap" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.003088, 15.6205 )
+texture = ExtResource( 2 )
+hframes = 18
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( -5.81973, -0.361664 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( 5.81973, 0.361664 )
+polygon = PoolVector2Array( 1.21284, 15.5276, -7.03303, 15.4525, -7.77165, 16.6585, -12.3995, 18.7992, -8.78152, 21.0151, -8.81908, 25.138, -12.7083, 26.0728, -8.85664, 29.261, -9.12789, 32.4116, -11.8111, 34.085, -8.93176, 37.5068, -9.20301, 40.6575, -11.8863, 42.3308, -8.26826, 44.5467, -7.80088, 46.4913, 6.74623, 47.1089, 8.22348, 44.6969, 11.1404, 43.9959, 8.49473, 41.5463, 8.53229, 37.4234, 11.2155, 35.75, 8.56985, 33.3004, 8.60741, 29.1775, 12.263, 27.2704, 8.64497, 25.0546, 8.68253, 20.9316, 11.3658, 19.2583, 8.72009, 16.8087, 7.2804, 15.0978 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Swing"
+anims/RESET = SubResource( 1 )
+anims/Swing = SubResource( 2 )
