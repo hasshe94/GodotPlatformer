@@ -49,3 +49,5 @@ polygon = PoolVector2Array( 1.21284, 15.5276, -7.03303, 15.4525, -7.77165, 16.65
 autoplay = "Swing"
 anims/RESET = SubResource( 1 )
 anims/Swing = SubResource( 2 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
