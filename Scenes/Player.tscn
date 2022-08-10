@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.5, 7.5 )
+extents = Vector2( 5, 7.5 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Attack"
@@ -149,7 +149,6 @@ vframes = 15
 frame = 41
 
 [node name="BodyCollider" type="CollisionShape2D" parent="."]
-position = Vector2( -0.5, -0.5 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
