@@ -260,9 +260,6 @@ font_data = ExtResource( 11 )
 [node name="World" type="Node2D"]
 script = ExtResource( 10 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 73, 73 )
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -435,6 +432,9 @@ margin_bottom = 28.0
 custom_fonts/font = SubResource( 27 )
 text = "00:00:00"
 align = 2
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 49, 73 )
 
 [editable path="DoorAndButton"]
 [editable path="SpinningBlade"]
