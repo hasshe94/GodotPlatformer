@@ -278,18 +278,14 @@ position = Vector2( 322, 31 )
 [node name="SwingingTrap2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 544, 79 )
 
-[node name="SwingingTrap5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1124, 127 )
+[node name="SwingingTrap3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 963, 156 )
 
 [node name="SwingingTrap4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 963, 156 )
+position = Vector2( 1124, 127 )
 
 [node name="SpikeTrap" parent="." instance=ExtResource( 4 )]
 position = Vector2( 131, 38 )
-
-[node name="SpikeTrap9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 971, 254 )
-rotation = 1.5708
 
 [node name="SpikeTrap5" parent="." instance=ExtResource( 4 )]
 position = Vector2( 967, 315 )
@@ -311,12 +307,16 @@ rotation = -3.14159
 position = Vector2( 1114, 218 )
 rotation = -3.14159
 
+[node name="SpikeTrap7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 874, 128 )
+rotation = 1.5708
+
 [node name="SpikeTrap8" parent="." instance=ExtResource( 4 )]
 position = Vector2( 808, 186 )
 rotation = -3.14159
 
-[node name="SpikeTrap7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 874, 128 )
+[node name="SpikeTrap9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 971, 254 )
 rotation = 1.5708
 
 [node name="DoorAndButton" parent="." instance=ExtResource( 5 )]
@@ -338,6 +338,7 @@ position = Vector2( 1100, 350 )
 script = ExtResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SpinningBlade2"]
+autoplay = "Spin"
 playback_speed = -3.0
 anims/RESET = SubResource( 1 )
 anims/Spin = SubResource( 22 )
@@ -353,7 +354,7 @@ rotation = -1.61425
 texture = ExtResource( 7 )
 hframes = 8
 
-[node name="Area2D" type="Area2D" parent="SpinningBlade2/Path2D/PathFollow2D/Sprite"]
+[node name="Area2D" type="Area2D" parent="SpinningBlade2/Path2D/PathFollow2D/Sprite" groups=["Deadly"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpinningBlade2/Path2D/PathFollow2D/Sprite/Area2D"]
 shape = SubResource( 24 )
@@ -364,6 +365,7 @@ script = ExtResource( 8 )
 follow_speed = 100
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SpinningBlade3"]
+autoplay = "Spin"
 playback_speed = -3.0
 anims/RESET = SubResource( 1 )
 anims/Spin = SubResource( 22 )
@@ -380,7 +382,7 @@ rotate = false
 texture = ExtResource( 7 )
 hframes = 8
 
-[node name="Area2D" type="Area2D" parent="SpinningBlade3/Path2D/PathFollow2D/Sprite"]
+[node name="Area2D" type="Area2D" parent="SpinningBlade3/Path2D/PathFollow2D/Sprite" groups=["Deadly"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpinningBlade3/Path2D/PathFollow2D/Sprite/Area2D"]
 shape = SubResource( 24 )
@@ -391,6 +393,7 @@ script = ExtResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SpinningBlade4"]
 root_node = NodePath("../../SpinningBlade4")
+autoplay = "Spin"
 playback_speed = -3.0
 anims/RESET = SubResource( 1 )
 anims/Spin = SubResource( 22 )
@@ -407,7 +410,7 @@ rotate = false
 texture = ExtResource( 7 )
 hframes = 8
 
-[node name="Area2D" type="Area2D" parent="SpinningBlade4/Path2D/PathFollow2D/Sprite"]
+[node name="Area2D" type="Area2D" parent="SpinningBlade4/Path2D/PathFollow2D/Sprite" groups=["Deadly"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpinningBlade4/Path2D/PathFollow2D/Sprite/Area2D"]
 shape = SubResource( 24 )
@@ -434,7 +437,7 @@ text = "00:00:00"
 align = 2
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 49, 73 )
+position = Vector2( 49, 68 )
 
 [editable path="DoorAndButton"]
 [editable path="SpinningBlade"]
