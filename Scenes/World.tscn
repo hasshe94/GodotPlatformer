@@ -12,6 +12,10 @@
 [ext_resource path="res://Scripts/World.gd" type="Script" id=10]
 [ext_resource path="res://OtherAssets/joystix monospace.ttf" type="DynamicFontData" id=11]
 
+[sub_resource type="DynamicFont" id=27]
+size = 24
+font_data = ExtResource( 11 )
+
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 0.5, 0.5 )
 
@@ -237,7 +241,7 @@ tracks/0/keys = {
 
 [sub_resource type="Curve2D" id=23]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -2, 1, 0, 0, 0, 0, -4, -45, 0, 0, 0, 0, 91, -43, 0, 0, 0, 0, 95, -23, 0, 0, 0, 0, 98, 3, 0, 0, 0, 0, 46, 3, 0, 0, 0, 0, -4, -1, 0, 0, 0, 0, -2, 1 )
+"points": PoolVector2Array( 0, 0, 0, 0, 4, -9, 0, 0, 0, 0, 96, -8, 0, 0, 0, 0, 96, -40, 0, 0, 0, 0, 3, -40, 0, 0, 0, 0, 3, -9, 0, 0, 0, 0, 96, -8, 0, 0, 0, 0, 95, -40, 0, 0, 0, 0, 3, -40, 0, 0, 0, 0, 3, -9 )
 }
 
 [sub_resource type="CircleShape2D" id=24]
@@ -253,12 +257,23 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 56, 0, 0, 0, 0, 0, 59, 27, 0, 0, 0, 0, -1, 28, 0, 0, 0, 0, 58, 27, 0, 0, 0, 0, 57, 0, 0, 0, 0, 0, -1, -2 )
 }
 
-[sub_resource type="DynamicFont" id=27]
-size = 24
-font_data = ExtResource( 11 )
-
 [node name="World" type="Node2D"]
 script = ExtResource( 10 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+margin_left = 1110.0
+margin_top = -1.0
+margin_right = 1270.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 27 )
+text = "00:00:00"
+align = 2
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -279,7 +294,7 @@ position = Vector2( 322, 31 )
 position = Vector2( 544, 79 )
 
 [node name="SwingingTrap3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 963, 156 )
+position = Vector2( 934, 160 )
 
 [node name="SwingingTrap4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1124, 127 )
@@ -319,6 +334,22 @@ rotation = -3.14159
 position = Vector2( 971, 254 )
 rotation = 1.5708
 
+[node name="SpikeTrap10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 856, 234 )
+rotation = -3.14159
+
+[node name="SpikeTrap11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1112, 378 )
+rotation = -3.14159
+
+[node name="SpikeTrap12" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1147, 378 )
+rotation = -3.14159
+
+[node name="SpikeTrap13" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1181, 378 )
+rotation = -3.14159
+
 [node name="DoorAndButton" parent="." instance=ExtResource( 5 )]
 position = Vector2( 352, 214 )
 
@@ -336,6 +367,7 @@ follow_speed = 125
 [node name="SpinningBlade2" type="Node2D" parent="."]
 position = Vector2( 1100, 350 )
 script = ExtResource( 8 )
+follow_speed = 125
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SpinningBlade2"]
 autoplay = "Spin"
@@ -351,18 +383,20 @@ position = Vector2( -2, 1 )
 rotation = -1.61425
 
 [node name="Sprite" type="Sprite" parent="SpinningBlade2/Path2D/PathFollow2D"]
+position = Vector2( 9.72992, 6.42871 )
 texture = ExtResource( 7 )
 hframes = 8
 
 [node name="Area2D" type="Area2D" parent="SpinningBlade2/Path2D/PathFollow2D/Sprite" groups=["Deadly"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpinningBlade2/Path2D/PathFollow2D/Sprite/Area2D"]
+position = Vector2( 3.05176e-05, 0 )
 shape = SubResource( 24 )
 
 [node name="SpinningBlade3" type="Node2D" parent="."]
 position = Vector2( 905, 119 )
 script = ExtResource( 8 )
-follow_speed = 100
+follow_speed = 200
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SpinningBlade3"]
 autoplay = "Spin"
@@ -390,6 +424,7 @@ shape = SubResource( 24 )
 [node name="SpinningBlade4" type="Node2D" parent="."]
 position = Vector2( 882, 242 )
 script = ExtResource( 8 )
+follow_speed = 125
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SpinningBlade4"]
 root_node = NodePath("../../SpinningBlade4")
@@ -421,23 +456,8 @@ position = Vector2( 1098, 90 )
 [node name="SavePoint2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 891, 314 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="Label" type="Label" parent="CanvasLayer/Control"]
-margin_left = 1110.0
-margin_top = -1.0
-margin_right = 1270.0
-margin_bottom = 28.0
-custom_fonts/font = SubResource( 27 )
-text = "00:00:00"
-align = 2
-
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 49, 68 )
+position = Vector2( 1124, 87 )
 
 [editable path="DoorAndButton"]
 [editable path="SpinningBlade"]
