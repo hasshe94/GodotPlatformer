@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Monkey-Drama.mp3-501263683ebcd2b757201772c5b9acb2.mp3str"
+
+[deps]
+
+source_file="res://sfx/Monkey-Drama.mp3"
+dest_files=[ "res://.import/Monkey-Drama.mp3-501263683ebcd2b757201772c5b9acb2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
