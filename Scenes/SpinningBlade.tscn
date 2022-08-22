@@ -56,7 +56,7 @@ anims/Spin = SubResource( 41 )
 curve = SubResource( 42 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 2, -25 )
+position = Vector2( 2, -27 )
 rotation = -1.6065
 rotate = false
 
