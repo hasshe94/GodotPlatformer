@@ -16,7 +16,7 @@
 [ext_resource path="res://Sprites/buttom_pressed.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/buttom.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/strange_door_closed_anim_strip_10.png" type="Texture" id=16]
-[ext_resource path="res://Scenes/Camera2D.gd" type="Script" id=17]
+[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=17]
 
 [sub_resource type="DynamicFont" id=27]
 size = 24
