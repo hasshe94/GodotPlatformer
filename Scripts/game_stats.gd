@@ -2,17 +2,34 @@ extends Node
 
 onready var game_start_time = OS.get_ticks_msec()
 var current_spawn = null 
+var resetdoors = false
 
 func reset():
 	current_spawn = null
 	get_tree().reload_current_scene()
 	game_start_time = OS.get_ticks_msec()
-
+	resetdoors = false
+	
 func check_reset():
+	var doors = get_tree().get_nodes_in_group(("Door"))
+	for d in doors:
+		d.close()
 	if current_spawn == null:
 		reset()
 	else:
 		return false
+
+
+#func reset():
+	#current_spawn = null
+	#get_tree().reload_current_scene()
+	#game_start_time = OS.get_ticks_msec()
+
+#func check_reset():
+	#if current_spawn == null:
+		#reset()
+	#else:
+		#return false
 
 func set_spawn(spawn):
 	current_spawn = spawn

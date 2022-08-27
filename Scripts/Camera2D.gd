@@ -6,7 +6,7 @@ var center = Vector2.ZERO
 
 func _ready():
 	center = get_viewport_rect().size/2
-	target = owner.get_node("Player")
+	target = get_parent().get_node("Player")
 	
 	position = target.global_position
 	zoom = Vector2(0.3,0.3)
@@ -14,12 +14,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("zoom"):
-		if zoomed:
-			target = null
-			zoomed = false
-		else:
-			target = owner.get_node("Player").global_position
-			zoomed = true
+		zoomed = !zoomed
 			
 	if zoomed:
 		position = target.global_position
