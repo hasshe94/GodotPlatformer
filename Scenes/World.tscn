@@ -1395,7 +1395,7 @@ position = Vector2( 167, 445 )
 position = Vector2( 73, 316 )
 
 [node name="SwingingTrap7" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 57, 174 )
+position = Vector2( 46, 175 )
 
 [node name="SwingingTrap8" parent="SwingingTraps" instance=ExtResource( 3 )]
 position = Vector2( 826, 15 )
