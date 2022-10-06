@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Failed/SpikeSpitter.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/platform_metroidvania asset pack v1.01/miscellaneous sprites/trap_spikes_anim_strip_7.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/platform_metroidvania asset pack v1.01/miscellaneous sprites/spikes_trap.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2.5, 2.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 19.5 )
+
+[node name="SpikeSpitter" type="Node2D"]
+position = Vector2( 131, 11 )
+rotation = 1.5708
+script = ExtResource( 1 )
+
+[node name="Arrow" type="Area2D" parent="." groups=["Deadly"]]
+position = Vector2( -3.99935, 179 )
+
+[node name="Sprite" type="Sprite" parent="Arrow"]
+position = Vector2( -7, -48 )
+texture = ExtResource( 3 )
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow"]
+position = Vector2( -7.00001, -42.5 )
+shape = SubResource( 1 )
+
+[node name="SpitterSprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 7
+frame = 1
+
+[node name="Position2D" type="Position2D" parent="SpitterSprite"]
+position = Vector2( -9.99979, 59 )
+rotation = 1.5708
+
+[node name="SpikeEnd" type="Area2D" parent="."]
+position = Vector2( -2, 56 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeEnd"]
+position = Vector2( -2.99922, 161 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[connection signal="area_entered" from="SpikeEnd" to="." method="_on_SpikeEnd_area_entered"]
