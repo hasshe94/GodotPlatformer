@@ -137,11 +137,11 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=10]
-radius = 4.0
+radius = 2.0
 height = 6.0
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 4, 6.5 )
+extents = Vector2( 4.25, 6.5 )
 
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 2 )
@@ -165,10 +165,11 @@ anims/Running = SubResource( 2 )
 [node name="DeathZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2( -2, 0 )
 shape = SubResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -0.5 )
+position = Vector2( -0.25, 0 )
 shape = SubResource( 11 )
 
 [connection signal="area_entered" from="DeathZone" to="." method="_on_Area2D_area_entered"]

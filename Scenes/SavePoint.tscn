@@ -145,4 +145,3 @@ texture = ExtResource( 1 )
 hframes = 9
 
 [connection signal="body_entered" from="." to="." method="_on_SavePoint_body_entered"]
-[connection signal="body_shape_entered" from="." to="." method="_on_SavePoint_body_shape_entered"]

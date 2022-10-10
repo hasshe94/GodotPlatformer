@@ -6,8 +6,13 @@ var music_tracks = {
 	"main":"res://sfx/music/Monkey-Drama.mp3",
 }
 
+var sound_effects = {
+	"jump":"res://sfx/SoundEffects/92434750.mp3",
+	"dead":"res://sfx/SoundEffects/mixkit-failure-arcade-alert-notification-240.wav",
+}
+	
 var music_db = 1
-var sound_db = 1
+var sound_db = 200
 
 func change_music_db(val):
 	music_db = linear2db(val)
@@ -21,3 +26,10 @@ func _ready():
 	add_child(music)
 	music.play()
 
+func play_sound_effect(sfx):
+	var sound = AudioStreamPlayer.new()
+	sound.stream = load(sound_effects[sfx])
+	add_child(sound)
+	sound.play()
+	yield(sound,"finished")
+	sound.queue_free()

@@ -76,6 +76,3 @@ frame = 1
 autoplay = "Spike Trigger"
 anims/RESET = SubResource( 2 )
 "anims/Spike Trigger" = SubResource( 3 )
-
-[connection signal="body_entered" from="." to="." method="_on_SpikeTrap_body_entered"]
-[connection signal="body_shape_entered" from="." to="." method="_on_SpikeTrap_body_shape_entered"]

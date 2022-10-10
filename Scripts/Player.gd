@@ -80,12 +80,13 @@ func _physics_process(delta):
 	velocity.y +=gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
-
-
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
+		SoundPlayer.play_sound_effect("jump")
 
 
 func _on_DeathZone_area_entered(area):
 	if area.is_in_group("Deadly"):
+		SoundPlayer.play_sound_effect("dead")
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
 		

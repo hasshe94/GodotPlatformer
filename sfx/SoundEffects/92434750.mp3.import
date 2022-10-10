@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/92434750.mp3-95c2f460aba8476ce04fc7f3a26884e1.mp3str"
+
+[deps]
+
+source_file="res://sfx/SoundEffects/92434750.mp3"
+dest_files=[ "res://.import/92434750.mp3-95c2f460aba8476ce04fc7f3a26884e1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
