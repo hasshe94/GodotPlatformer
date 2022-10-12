@@ -172,5 +172,5 @@ shape = SubResource( 10 )
 position = Vector2( -0.25, 0 )
 shape = SubResource( 11 )
 
-[connection signal="area_entered" from="DeathZone" to="." method="_on_DeathZone_area_entered"]
 [connection signal="area_entered" from="DeathZone" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="DeathZone" to="." method="_on_DeathZone_area_entered"]

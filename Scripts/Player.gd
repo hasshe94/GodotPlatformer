@@ -80,7 +80,6 @@ func _physics_process(delta):
 	
 	handle_state(player_state)
 	update_animation(player_state)	
-	#set gravity
 	velocity.y +=gravity * delta
 	velocity = move_and_slide_with_snap(velocity,Vector2.DOWN, Vector2.UP)
 
