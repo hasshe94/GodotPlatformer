@@ -29,7 +29,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 
-[node name="SwingingTrap" type="Node2D"]
+[node name="SwingingTrap" type="Node2D" groups=["Deadly"]]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -0.003088, 15.6205 )

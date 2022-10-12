@@ -59,6 +59,7 @@ func _physics_process(delta):
 	if velocity == Vector2.ZERO:
 		player_state = state.IDLE
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
+		SoundPlayer.play_sound_effect("jump")
 		player_state = state.STARTJUMP
 	elif velocity.x !=0:
 		player_state = state.RUNNING
@@ -72,16 +73,16 @@ func _physics_process(delta):
 			player_state = state.FALL
 			
 
+
+
+
 	
 	
 	handle_state(player_state)
 	update_animation(player_state)	
 	#set gravity
 	velocity.y +=gravity * delta
-	velocity = move_and_slide(velocity, Vector2.UP)
-	
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		SoundPlayer.play_sound_effect("jump")
+	velocity = move_and_slide_with_snap(velocity,Vector2.DOWN, Vector2.UP)
 
 
 func _on_DeathZone_area_entered(area):
@@ -89,5 +90,9 @@ func _on_DeathZone_area_entered(area):
 		SoundPlayer.play_sound_effect("dead")
 		if GameStats.check_reset() == false:
 			global_position = GameStats.get_spawn().global_position
-		
+	elif area.is_in_group("W"):
+		get_tree().change_scene("res://Scenes/WinningScreen.tscn")
+
+
+
 	
