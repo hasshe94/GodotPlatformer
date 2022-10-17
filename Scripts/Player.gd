@@ -73,10 +73,6 @@ func _physics_process(delta):
 			player_state = state.FALL
 			
 
-
-
-
-	
 	
 	handle_state(player_state)
 	update_animation(player_state)	
