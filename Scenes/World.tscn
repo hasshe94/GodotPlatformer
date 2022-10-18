@@ -1529,46 +1529,7 @@ limit_bottom = 720
 script = ExtResource( 17 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-<<<<<<< HEAD
-position = Vector2( 547, 528 )
-=======
 position = Vector2( 113, 66 )
->>>>>>> cec1845f612aaef4763118b9f01229d41a3aff25
-
-[node name="SwingingTraps" type="Node2D" parent="."]
-
-[node name="SwingingTrap" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 322, 31 )
-
-[node name="SwingingTrap2" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 541, 100 )
-
-[node name="SwingingTrap3" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 934, 160 )
-
-[node name="SwingingTrap4" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 1124, 127 )
-
-[node name="SwingingTrap5" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 167, 445 )
-
-[node name="SwingingTrap6" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 73, 316 )
-
-[node name="SwingingTrap7" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 46, 175 )
-
-[node name="SwingingTrap8" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 826, 15 )
-
-[node name="SwingingTrap9" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 1096, 24 )
-
-[node name="SwingingTrap11" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 1192, 257 )
-
-[node name="SwingingTrap12" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 340, 470 )
 
 [node name="SpinningBlades" type="Node2D" parent="."]
 
@@ -2601,11 +2562,38 @@ position = Vector2( 1152, 627 )
 [node name="CrystalGameWinner" parent="Win" instance=ExtResource( 29 )]
 position = Vector2( 941, 426 )
 
-[connection signal="body_entered" from="SpinningBlades/SpinningBlade/Path2D/PathFollow2D/Sprite/Area2D" to="SpinningBlades/SpinningBlade" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="SpinningBlades/SpinningBlade5/Path2D/PathFollow2D/Sprite/Area2D" to="SpinningBlades/SpinningBlade5" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="SpinningBlades/SpinningBlade6/Path2D/PathFollow2D/Sprite/Area2D" to="SpinningBlades/SpinningBlade6" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="SpinningBlades/SpinningBlade7/Path2D/PathFollow2D/Sprite/Area2D" to="SpinningBlades/SpinningBlade7" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="SpinningBlades/SpinningBlade2/Path2D/PathFollow2D/Sprite/Area2D" to="SpinningBlades/SpinningBlade2" method="_on_Area2D_body_entered"]
+[node name="SwingingTraps" type="Node2D" parent="."]
+
+[node name="SwingingTraps@SwingingTrap2" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 541, 100 )
+
+[node name="SwingingTraps@SwingingTrap3" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 934, 160 )
+
+[node name="SwingingTraps@SwingingTrap4" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 1124, 127 )
+
+[node name="SwingingTraps@SwingingTrap5" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 167, 445 )
+
+[node name="SwingingTraps@SwingingTrap6" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 73, 316 )
+
+[node name="SwingingTraps@SwingingTrap7" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 46, 175 )
+
+[node name="SwingingTraps@SwingingTrap8" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 826, 15 )
+
+[node name="SwingingTraps@SwingingTrap9" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 1096, 24 )
+
+[node name="SwingingTraps@SwingingTrap11" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 1192, 257 )
+
+[node name="SwingingTraps@SwingingTrap12" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 340, 470 )
+
 [connection signal="body_entered" from="DoorAndButtons/DoorAndButton/DoorAndButton2/Button/Area2D" to="DoorAndButtons/DoorAndButton/DoorAndButton2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="DoorAndButtons/DoorAndButton2/Button/Area2D" to="DoorAndButtons/DoorAndButton2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="DoorAndButtons/DoorAndButton3/Button/Area2D" to="DoorAndButtons/DoorAndButton3" method="_on_Area2D_body_entered"]
