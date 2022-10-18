@@ -1529,7 +1529,11 @@ limit_bottom = 720
 script = ExtResource( 17 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+<<<<<<< HEAD
 position = Vector2( 547, 528 )
+=======
+position = Vector2( 113, 66 )
+>>>>>>> cec1845f612aaef4763118b9f01229d41a3aff25
 
 [node name="SwingingTraps" type="Node2D" parent="."]
 
