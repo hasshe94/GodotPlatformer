@@ -79,7 +79,6 @@ func _physics_process(delta):
 	velocity.y +=gravity * delta
 	velocity = move_and_slide_with_snap(velocity,Vector2.DOWN, Vector2.UP)
 
-
 func _on_DeathZone_area_entered(area):
 	if area.is_in_group("Deadly"):
 		SoundPlayer.play_sound_effect("dead")

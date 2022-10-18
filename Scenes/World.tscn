@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=2]
+[gd_scene load_steps=135 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/tileset.png" type="Texture" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://Scenes/CrystalGameWinner.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scripts/FireBallSpitter.gd" type="Script" id=30]
 [ext_resource path="res://Sprites/Animation Pack/Energy ball/EnergyBall.png" type="Texture" id=31]
+[ext_resource path="res://Scenes/FireBallSpitter.tscn" type="PackedScene" id=32]
 
 [sub_resource type="DynamicFont" id=27]
 size = 24
@@ -911,6 +912,44 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 6.5, 46 )
 
+[sub_resource type="RectangleShape2D" id=101]
+extents = Vector2( 6.5, 3.5 )
+
+[sub_resource type="Animation" id=102]
+resource_name = "FireBallEffect"
+length = 0.9
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
+
+[sub_resource type="Animation" id=103]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=104]
+extents = Vector2( 6.5, 46 )
+
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
@@ -1490,7 +1529,7 @@ limit_bottom = 720
 script = ExtResource( 17 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 129, 55 )
+position = Vector2( 547, 528 )
 
 [node name="SwingingTraps" type="Node2D" parent="."]
 
@@ -2217,6 +2256,91 @@ position = Vector2( 28, 9 )
 position = Vector2( -265, 4 )
 shape = SubResource( 4 )
 
+[node name="FireBallSpitter2" type="Node2D" parent="SpitterTraps/FireballSpitters" groups=["Deadly"]]
+position = Vector2( 1110, 671 )
+script = ExtResource( 30 )
+
+[node name="FireBall" type="Area2D" parent="SpitterTraps/FireballSpitters/FireBallSpitter2" groups=["Deadly"]]
+position = Vector2( 212, 1 )
+rotation = 3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpitterTraps/FireballSpitters/FireBallSpitter2/FireBall"]
+position = Vector2( 89.5, 0.999992 )
+shape = SubResource( 101 )
+
+[node name="Sprite" type="Sprite" parent="SpitterTraps/FireballSpitters/FireBallSpitter2/FireBall"]
+position = Vector2( 91, 0.999992 )
+scale = Vector2( 0.161024, 0.199219 )
+texture = ExtResource( 31 )
+hframes = 9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SpitterTraps/FireballSpitters/FireBallSpitter2/FireBall"]
+autoplay = "FireBallEffect"
+anims/FireBallEffect = SubResource( 102 )
+anims/RESET = SubResource( 103 )
+
+[node name="SpitterSprite" type="Sprite" parent="SpitterTraps/FireballSpitters/FireBallSpitter2"]
+position = Vector2( 131, 1 )
+rotation = 1.5708
+texture = ExtResource( 24 )
+hframes = 7
+frame = 1
+
+[node name="Position2D" type="Position2D" parent="SpitterTraps/FireballSpitters/FireBallSpitter2/SpitterSprite"]
+position = Vector2( -0.000366211, -91 )
+rotation = 1.5708
+
+[node name="FireBallEnd" type="Area2D" parent="SpitterTraps/FireballSpitters/FireBallSpitter2"]
+position = Vector2( 21, 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpitterTraps/FireballSpitters/FireBallSpitter2/FireBallEnd"]
+position = Vector2( -562, -15 )
+shape = SubResource( 104 )
+
+[node name="FireBallSpitter3" type="Node2D" parent="SpitterTraps/FireballSpitters" groups=["Deadly"]]
+position = Vector2( 1110, 627 )
+script = ExtResource( 30 )
+
+[node name="FireBall" type="Area2D" parent="SpitterTraps/FireballSpitters/FireBallSpitter3" groups=["Deadly"]]
+position = Vector2( 212, 1 )
+rotation = 3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpitterTraps/FireballSpitters/FireBallSpitter3/FireBall"]
+position = Vector2( 89.5, 0.999992 )
+shape = SubResource( 101 )
+
+[node name="Sprite" type="Sprite" parent="SpitterTraps/FireballSpitters/FireBallSpitter3/FireBall"]
+position = Vector2( 91, 0.999992 )
+scale = Vector2( 0.161024, 0.199219 )
+texture = ExtResource( 31 )
+hframes = 9
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SpitterTraps/FireballSpitters/FireBallSpitter3/FireBall"]
+autoplay = "FireBallEffect"
+anims/FireBallEffect = SubResource( 102 )
+anims/RESET = SubResource( 103 )
+
+[node name="SpitterSprite" type="Sprite" parent="SpitterTraps/FireballSpitters/FireBallSpitter3"]
+position = Vector2( 131, 1 )
+rotation = 1.5708
+texture = ExtResource( 24 )
+hframes = 7
+frame = 1
+
+[node name="Position2D" type="Position2D" parent="SpitterTraps/FireballSpitters/FireBallSpitter3/SpitterSprite"]
+position = Vector2( -0.000366211, -91 )
+rotation = 1.5708
+
+[node name="FireBallEnd" type="Area2D" parent="SpitterTraps/FireballSpitters/FireBallSpitter3"]
+position = Vector2( 28, 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpitterTraps/FireballSpitters/FireBallSpitter3/FireBallEnd"]
+position = Vector2( -449, 8 )
+shape = SubResource( 104 )
+
+[node name="FireBallSpitter4" parent="SpitterTraps/FireballSpitters" instance=ExtResource( 32 )]
+position = Vector2( 1110, 540 )
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 20 )
 cell_size = Vector2( 16, 16 )
@@ -2457,14 +2581,15 @@ position = Vector2( 948, 679 )
 position = Vector2( 1034, 675 )
 
 [node name="Lightning8" parent="LightningTraps" instance=ExtResource( 27 )]
-position = Vector2( 1113, 678 )
+position = Vector2( 1102, 675 )
 
-[node name="MovingPlatform2" type="Node2D" parent="."]
+[node name="MovingPlatform" type="Node2D" parent="."]
 
-[node name="MovingPlatform" parent="MovingPlatform2" instance=ExtResource( 28 )]
+[node name="MovingPlatform" parent="MovingPlatform" instance=ExtResource( 28 )]
 position = Vector2( 487, 500 )
+follow_speed = 50
 
-[node name="MovingPlatform2" parent="MovingPlatform2" instance=ExtResource( 28 )]
+[node name="MovingPlatform2" parent="MovingPlatform" instance=ExtResource( 28 )]
 position = Vector2( 1152, 627 )
 
 [node name="Win" type="Node2D" parent="."]
@@ -2484,5 +2609,7 @@ position = Vector2( 941, 426 )
 [connection signal="area_entered" from="SpitterTraps/SpikeSpitters/SpikeSpitter2/SpikeEnd" to="SpitterTraps/SpikeSpitters/SpikeSpitter2" method="_on_SpikeEnd_area_entered"]
 [connection signal="area_entered" from="SpitterTraps/SpikeSpitters/SpikeSpitter3/SpikeEnd" to="SpitterTraps/SpikeSpitters/SpikeSpitter3" method="_on_SpikeEnd_area_entered"]
 [connection signal="area_entered" from="SpitterTraps/FireballSpitters/FireBallSpitter/FireBallEnd" to="SpitterTraps/FireballSpitters/FireBallSpitter" method="_on_FireBallEnd_area_entered"]
+[connection signal="area_entered" from="SpitterTraps/FireballSpitters/FireBallSpitter2/FireBallEnd" to="SpitterTraps/FireballSpitters/FireBallSpitter2" method="_on_FireBallEnd_area_entered"]
+[connection signal="area_entered" from="SpitterTraps/FireballSpitters/FireBallSpitter3/FireBallEnd" to="SpitterTraps/FireballSpitters/FireBallSpitter3" method="_on_FireBallEnd_area_entered"]
 
 [editable path="DoorAndButtons/DoorAndButton"]
