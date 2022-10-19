@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/platform_metroidvania asset pack v1.01/miscellaneous sprites/coin_anim_strip_6.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/CoinPoints.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.5, 5.5 )
+extents = Vector2( 4, 4 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "CoinSpin"
@@ -37,9 +38,9 @@ tracks/0/keys = {
 }
 
 [node name="Coin" type="Area2D" groups=["Points"]]
+script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, -0.5 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -51,3 +52,5 @@ frame = 2
 autoplay = "CoinSpin"
 anims/CoinSpin = SubResource( 2 )
 anims/RESET = SubResource( 3 )
+
+[connection signal="body_entered" from="." to="." method="_on_Coin_body_entered"]
