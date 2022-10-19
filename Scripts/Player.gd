@@ -10,6 +10,8 @@ var velocity = Vector2.ZERO
 export(float) var friction = 10
 export(float) var acceleration = 25
 
+
+
 enum state {IDLE, RUNNING, PUSHING, ROLLING, JUMP, STARTJUMP, FALL, ATTACK}
 
 onready var player_state = state.IDLE
@@ -86,7 +88,7 @@ func _on_DeathZone_area_entered(area):
 			global_position = GameStats.get_spawn().global_position
 	elif area.is_in_group("W"):
 		get_tree().change_scene("res://Scenes/WinningScreen.tscn")
-
-
-
-	
+	elif area.is_in_group("Points"):
+		var points = 0
+		GameStats.points = GameStats.points + 1
+		print(points)
