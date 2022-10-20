@@ -1598,7 +1598,7 @@ limit_bottom = 720
 script = ExtResource( 17 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 931, 323 )
+position = Vector2( 130, 70 )
 
 [node name="SpinningBlades" type="Node2D" parent="."]
 
