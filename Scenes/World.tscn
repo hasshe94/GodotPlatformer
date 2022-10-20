@@ -1589,9 +1589,6 @@ custom_fonts/font = ExtResource( 34 )
 text = "YOU NEED 7 POINTS 
 TO WIN"
 
-[node name="Coin" parent="CanvasLayer/Control3/Label" instance=ExtResource( 33 )]
-position = Vector2( 985, 321 )
-
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 limit_left = 0
@@ -1601,7 +1598,7 @@ limit_bottom = 720
 script = ExtResource( 17 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 125, 71 )
+position = Vector2( 931, 323 )
 
 [node name="SpinningBlades" type="Node2D" parent="."]
 
@@ -2788,7 +2785,7 @@ position = Vector2( 122, -108 )
 position = Vector2( 133, 182 )
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 33 )]
-position = Vector2( 865, 341 )
+position = Vector2( 924, 325 )
 
 [node name="Coin3" parent="Coins" instance=ExtResource( 33 )]
 position = Vector2( 1062, 408 )
