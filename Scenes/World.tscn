@@ -2423,6 +2423,47 @@ position = Vector2( 28, 9 )
 position = Vector2( -253, -13 )
 shape = SubResource( 4 )
 
+[node name="SwingingTraps" type="Node2D" parent="."]
+
+[node name="SwingingTraps@SwingingTrap2" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 541, 100 )
+
+[node name="SwingingTraps@SwingingTrap3" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 934, 160 )
+
+[node name="SwingingTraps@SwingingTrap4" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 1124, 127 )
+
+[node name="SwingingTraps@SwingingTrap5" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 167, 445 )
+
+[node name="SwingingTraps@SwingingTrap6" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 73, 316 )
+
+[node name="SwingingTraps@SwingingTrap7" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 46, 175 )
+
+[node name="SwingingTraps@SwingingTrap8" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 826, 15 )
+
+[node name="SwingingTraps@SwingingTrap9" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 1096, 24 )
+
+[node name="SwingingTraps@SwingingTrap11" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 1145, 255 )
+
+[node name="SwingingTraps@SwingingTrap12" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 340, 470 )
+
+[node name="SwingingTrap" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 611, 477 )
+
+[node name="SwingingTrap2" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 736, 478 )
+
+[node name="SwingingTrap3" parent="SwingingTraps" instance=ExtResource( 3 )]
+position = Vector2( 857, 478 )
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 20 )
 cell_size = Vector2( 16, 16 )
@@ -2736,47 +2777,6 @@ position = Vector2( 1152, 627 )
 
 [node name="CrystalGameWinner" parent="Win" instance=ExtResource( 29 )]
 position = Vector2( 941, 426 )
-
-[node name="SwingingTraps" type="Node2D" parent="."]
-
-[node name="SwingingTraps@SwingingTrap2" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 541, 100 )
-
-[node name="SwingingTraps@SwingingTrap3" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 934, 160 )
-
-[node name="SwingingTraps@SwingingTrap4" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 1124, 127 )
-
-[node name="SwingingTraps@SwingingTrap5" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 167, 445 )
-
-[node name="SwingingTraps@SwingingTrap6" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 73, 316 )
-
-[node name="SwingingTraps@SwingingTrap7" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 46, 175 )
-
-[node name="SwingingTraps@SwingingTrap8" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 826, 15 )
-
-[node name="SwingingTraps@SwingingTrap9" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 1096, 24 )
-
-[node name="SwingingTraps@SwingingTrap11" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 1145, 255 )
-
-[node name="SwingingTraps@SwingingTrap12" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 340, 470 )
-
-[node name="SwingingTrap" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 611, 477 )
-
-[node name="SwingingTrap2" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 736, 478 )
-
-[node name="SwingingTrap3" parent="SwingingTraps" instance=ExtResource( 3 )]
-position = Vector2( 857, 478 )
 
 [node name="Coins" type="Node2D" parent="."]
 position = Vector2( 122, -108 )
