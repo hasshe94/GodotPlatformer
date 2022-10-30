@@ -1,4 +1,4 @@
-[gd_scene load_steps=143 format=2]
+[gd_scene load_steps=144 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/tileset.png" type="Texture" id=2]
@@ -33,7 +33,6 @@
 [ext_resource path="res://Sprites/Animation Pack/Energy ball/EnergyBall.png" type="Texture" id=31]
 [ext_resource path="res://Scenes/SpikeTrapDifferentTiming.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Scenes/CoinPoints.tscn" type="PackedScene" id=33]
-[ext_resource path="res://OtherAssets/hasanfont.tres" type="DynamicFont" id=34]
 
 [sub_resource type="DynamicFont" id=27]
 size = 24
@@ -45,6 +44,13 @@ font_path = "res://OtherAssets/joystix monospace.ttf"
 [sub_resource type="DynamicFont" id=110]
 size = 24
 font_data = SubResource( 109 )
+
+[sub_resource type="DynamicFontData" id=111]
+font_path = "res://OtherAssets/joystix monospace.ttf"
+
+[sub_resource type="DynamicFont" id=112]
+size = 17
+font_data = SubResource( 111 )
 
 [sub_resource type="Animation" id=40]
 length = 0.001
@@ -1557,6 +1563,7 @@ anchor_bottom = 1.0
 margin_left = 1.0
 margin_top = -1.0
 margin_right = 1.0
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
 margin_left = 1111.0
@@ -1570,6 +1577,7 @@ align = 2
 [node name="Control2" type="Control" parent="CanvasLayer"]
 margin_right = 40.0
 margin_bottom = 40.0
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Control2"]
 margin_right = 40.0
@@ -1580,12 +1588,13 @@ text = "Points: "
 [node name="Control3" type="Control" parent="CanvasLayer"]
 margin_right = 40.0
 margin_bottom = 40.0
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Control3"]
 margin_top = 25.0
 margin_right = 135.0
 margin_bottom = 49.0
-custom_fonts/font = ExtResource( 34 )
+custom_fonts/font = SubResource( 112 )
 text = "YOU NEED 7 POINTS 
 TO WIN"
 

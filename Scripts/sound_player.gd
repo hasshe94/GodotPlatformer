@@ -16,7 +16,7 @@ var sound_db = 1
 
 func change_music_db(value):
 	music_db = linear2db(value)
-	music_player.volume_db = music_db
+	music.volume_db = music_db
 
 func change_sound_db(value):
 	sound_db = linear2db(value)

@@ -4,4 +4,5 @@
 font_path = "res://OtherAssets/joystix monospace.ttf"
 
 [resource]
+size = 50
 font_data = SubResource( 109 )
