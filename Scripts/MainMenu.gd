@@ -26,7 +26,7 @@ func handle_selection(_current_selection):
 		get_parent().add_child(first_scene.instance())
 		queue_free()
 	elif _current_selection == 1:
-		print("add options")
+		get_tree().change_scene("res://Options.tscn")
 	elif _current_selection == 2:
 		get_tree().quit()
 
