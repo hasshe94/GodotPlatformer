@@ -18,7 +18,7 @@ config/icon="res://icon.png"
 
 GameStats="*res://Scripts/game_stats.gd"
 SoundPlayer="*res://Scripts/sound_player.gd"
-PauseCanvas="*res://PauseCanvas.tscn"
+PauseCanvas="*res://Scenes/PauseCanvas.tscn"
 
 [display]
 
