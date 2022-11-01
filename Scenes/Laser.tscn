@@ -8,7 +8,7 @@ extents = Vector2( 44, 3 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Projectile"
-length = 1.5
+length = 2.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
