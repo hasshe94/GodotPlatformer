@@ -49,7 +49,7 @@ margin_bottom = 362.0
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1117, 630 )
+position = Vector2( 834, 491 )
 scale = Vector2( 1.16562, 1.18519 )
 texture = ExtResource( 2 )
 

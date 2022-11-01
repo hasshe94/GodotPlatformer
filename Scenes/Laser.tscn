@@ -8,6 +8,7 @@ extents = Vector2( 44, 3 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Projectile"
+length = 1.5
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -61,7 +62,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[node name="Projectile" type="Area2D" groups=["Deadly"]]
+[node name="Laser" type="Area2D" groups=["Deadly"]]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
