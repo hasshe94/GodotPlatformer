@@ -1607,7 +1607,7 @@ limit_bottom = 720
 script = ExtResource( 17 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 110, 68 )
+position = Vector2( 190, 604 )
 
 [node name="SpinningBlades" type="Node2D" parent="."]
 
@@ -1954,6 +1954,9 @@ anims/ButtonUp = SubResource( 93 )
 anims/DoorClosed = SubResource( 94 )
 anims/DoorOpen = SubResource( 95 )
 anims/RESET = SubResource( 96 )
+
+[node name="DoorAndButton4" parent="DoorAndButtons" instance=ExtResource( 5 )]
+position = Vector2( 240, 595 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
