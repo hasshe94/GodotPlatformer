@@ -16,3 +16,7 @@ func _on_SfxSlider_value_changed(value):
 func _on_Button_pressed():
 	get_tree().change_scene("res://Scenes/MainMenu.tscn")
 
+
+
+func _on_Button2_pressed():
+	OS.window_fullscreen = !OS.window_fullscreen

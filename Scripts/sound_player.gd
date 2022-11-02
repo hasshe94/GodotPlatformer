@@ -3,7 +3,7 @@ extends Node
 onready var music = AudioStreamPlayer.new()
 
 var music_tracks = {
-	"main":"res://sfx/music/cyberpunk-street.wav",
+	"main":"res://sfx/music/cyberpunk-street.mp3",
 }
 
 var sound_effects = {

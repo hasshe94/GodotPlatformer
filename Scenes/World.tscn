@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=2]
+[gd_scene load_steps=145 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/tileset.png" type="Texture" id=2]
@@ -16,7 +16,6 @@
 [ext_resource path="res://Sprites/buttom_pressed.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/buttom.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/strange_door_closed_anim_strip_10.png" type="Texture" id=16]
-[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=17]
 [ext_resource path="res://Sprites/cyberpunk-street-files/cyberpunk-street-files/PNG/layers/foreground.png" type="Texture" id=18]
 [ext_resource path="res://Sprites/Wasteland-Files.png" type="Texture" id=19]
 [ext_resource path="res://Sprites/dark_castle_tileset.png" type="Texture" id=20]
@@ -1614,16 +1613,17 @@ custom_fonts/font = SubResource( 112 )
 text = "YOU NEED 7 POINTS 
 TO WIN"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 120, 54 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+zoom = Vector2( 0.3, 0.3 )
 limit_left = 0
 limit_top = 0
 limit_right = 1280
 limit_bottom = 720
-script = ExtResource( 17 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 120, 54 )
+smoothing_enabled = true
 
 [node name="SpinningBlades" type="Node2D" parent="."]
 
