@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=2]
+[gd_scene load_steps=142 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/tileset.png" type="Texture" id=2]
@@ -10,13 +10,11 @@
 [ext_resource path="res://Scripts/SpinningBlade.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/SavePoint.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/World.gd" type="Script" id=10]
-[ext_resource path="res://Sprites/cyberpunk-street-files/cyberpunk-street-files/PNG/layers/far-buildings.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/DoorAndButton.gd" type="Script" id=12]
 [ext_resource path="res://Sprites/strange_door_opening_anim_strip_14.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/buttom_pressed.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/buttom.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/strange_door_closed_anim_strip_10.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/cyberpunk-street-files/cyberpunk-street-files/PNG/layers/foreground.png" type="Texture" id=18]
 [ext_resource path="res://Sprites/Wasteland-Files.png" type="Texture" id=19]
 [ext_resource path="res://Sprites/dark_castle_tileset.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/DeathWater.tscn" type="PackedScene" id=21]
@@ -32,7 +30,6 @@
 [ext_resource path="res://Sprites/Animation Pack/Energy ball/EnergyBall.png" type="Texture" id=31]
 [ext_resource path="res://Scenes/SpikeTrapDifferentTiming.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Scenes/CoinPoints.tscn" type="PackedScene" id=33]
-[ext_resource path="res://Sprites/cyberpunk-street-files/cyberpunk-street-files/PNG/layers/back-buildings.png" type="Texture" id=34]
 
 [sub_resource type="DynamicFontData" id=113]
 font_path = "res://OtherAssets/joystix monospace.ttf"
@@ -1557,18 +1554,15 @@ script = ExtResource( 10 )
 [node name="Layer1" type="Sprite" parent="Background"]
 position = Vector2( 592.5, 321 )
 scale = Vector2( 5.2539, 3.98958 )
-texture = ExtResource( 11 )
 
 [node name="Layer2" type="Sprite" parent="Background"]
 position = Vector2( 579, 1038.22 )
 scale = Vector2( 5.42187, 4.17188 )
-texture = ExtResource( 34 )
 offset = Vector2( 0, -178.989 )
 
 [node name="Layer3" type="Sprite" parent="Background"]
 position = Vector2( 627.5, 369.5 )
 scale = Vector2( 3.55966, 3.32813 )
-texture = ExtResource( 18 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
