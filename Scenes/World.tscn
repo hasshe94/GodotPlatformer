@@ -1,20 +1,22 @@
-[gd_scene load_steps=142 format=2]
+[gd_scene load_steps=126 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/tileset.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/SwingingTrap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/SpikeTrap.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/DoorAndButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/near-buildings-bg.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Sci-Fi Platformer Tileset [16x16][FREE] - RottingPixels/sci-fi-tileset.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/On (38x38).png" type="Texture" id=7]
 [ext_resource path="res://Scripts/SpinningBlade.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/SavePoint.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/World.gd" type="Script" id=10]
+[ext_resource path="res://Sprites/skyline-b.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/DoorAndButton.gd" type="Script" id=12]
 [ext_resource path="res://Sprites/strange_door_opening_anim_strip_14.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/buttom_pressed.png" type="Texture" id=14]
 [ext_resource path="res://Sprites/buttom.png" type="Texture" id=15]
 [ext_resource path="res://Sprites/strange_door_closed_anim_strip_10.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/buildings-bg.png" type="Texture" id=17]
 [ext_resource path="res://Sprites/Wasteland-Files.png" type="Texture" id=19]
 [ext_resource path="res://Sprites/dark_castle_tileset.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/DeathWater.tscn" type="PackedScene" id=21]
@@ -271,36 +273,6 @@ extents = Vector2( 7, 2 )
 [sub_resource type="RectangleShape2D" id=33]
 extents = Vector2( 7, 24 )
 
-[sub_resource type="Animation" id=34]
-resource_name = "ButtonDown"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Button:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 14 ) ]
-}
-
-[sub_resource type="Animation" id=35]
-resource_name = "ButtonUp"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Button:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 15 ) ]
-}
-
 [sub_resource type="Animation" id=36]
 resource_name = "DoorClosed"
 loop = true
@@ -351,6 +323,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Button:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 15 ) ]
 }
 
 [sub_resource type="Animation" id=37]
@@ -404,420 +388,20 @@ tracks/3/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Button:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 14 ) ]
+}
 
 [sub_resource type="Animation" id=38]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Button:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ ExtResource( 15 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Door:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ ExtResource( 16 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Door:hframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 10 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Door:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Door/Door/CollisionShape2D:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-
-[sub_resource type="RectangleShape2D" id=80]
-extents = Vector2( 8, 0.625 )
-
-[sub_resource type="RectangleShape2D" id=81]
-extents = Vector2( 7, 2 )
-
-[sub_resource type="RectangleShape2D" id=82]
-extents = Vector2( 7, 24 )
-
-[sub_resource type="Animation" id=83]
-resource_name = "ButtonDown"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Button:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 14 ) ]
-}
-
-[sub_resource type="Animation" id=84]
-resource_name = "ButtonUp"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Button:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 15 ) ]
-}
-
-[sub_resource type="Animation" id=85]
-resource_name = "DoorClosed"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Door:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 16 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Door:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 10 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Door:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Door/Door/CollisionShape2D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=86]
-resource_name = "DoorOpen"
-length = 1.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Door:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 13 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Door:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 14 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Door:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 13 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Door/Door/CollisionShape2D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-
-[sub_resource type="Animation" id=87]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Button:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ ExtResource( 15 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Door:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ ExtResource( 16 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Door:hframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 10 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Door:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Door/Door/CollisionShape2D:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-
-[sub_resource type="RectangleShape2D" id=89]
-extents = Vector2( 8, 0.625 )
-
-[sub_resource type="RectangleShape2D" id=90]
-extents = Vector2( 7, 2 )
-
-[sub_resource type="RectangleShape2D" id=91]
-extents = Vector2( 7, 24 )
-
-[sub_resource type="Animation" id=92]
-resource_name = "ButtonDown"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Button:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 14 ) ]
-}
-
-[sub_resource type="Animation" id=93]
-resource_name = "ButtonUp"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Button:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 15 ) ]
-}
-
-[sub_resource type="Animation" id=94]
-resource_name = "DoorClosed"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Door:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 16 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Door:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 10 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Door:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Door/Door/CollisionShape2D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=95]
-resource_name = "DoorOpen"
-length = 1.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Door:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 13 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Door:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 14 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Door:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 13 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Door/Door/CollisionShape2D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-
-[sub_resource type="Animation" id=96]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Button:texture")
@@ -1551,27 +1135,28 @@ script = ExtResource( 10 )
 
 [node name="Background" type="Node2D" parent="."]
 
-[node name="Layer1" type="Sprite" parent="Background"]
-position = Vector2( 592.5, 321 )
-scale = Vector2( 5.2539, 3.98958 )
+[node name="Sprite2" type="Sprite" parent="Background"]
+position = Vector2( 648, 409 )
+scale = Vector2( 10.0391, 4.4125 )
+texture = ExtResource( 11 )
 
-[node name="Layer2" type="Sprite" parent="Background"]
-position = Vector2( 579, 1038.22 )
-scale = Vector2( 5.42187, 4.17188 )
-offset = Vector2( 0, -178.989 )
+[node name="Sprite3" type="Sprite" parent="Background"]
+position = Vector2( 1016, 293 )
+scale = Vector2( 3.73264, 3.42339 )
+texture = ExtResource( 17 )
 
-[node name="Layer3" type="Sprite" parent="Background"]
-position = Vector2( 627.5, 369.5 )
-scale = Vector2( 3.55966, 3.32813 )
+[node name="Sprite4" type="Sprite" parent="Background"]
+position = Vector2( 577, 194 )
+scale = Vector2( 1.50025, 0.774522 )
+texture = ExtResource( 5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.0
-margin_top = -1.0
-margin_right = 1.0
+margin_top = 2.0
+margin_bottom = 3.0
 mouse_filter = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
@@ -1608,9 +1193,10 @@ text = "YOU NEED 7 POINTS
 TO WIN"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 120, 54 )
+position = Vector2( 113, 60 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( -1, 0 )
 current = true
 zoom = Vector2( 0.3, 0.3 )
 limit_left = 0
@@ -1819,151 +1405,48 @@ shape = SubResource( 77 )
 
 [node name="DoorAndButtons" type="Node2D" parent="."]
 
-[node name="DoorAndButton" parent="DoorAndButtons" instance=ExtResource( 5 )]
-position = Vector2( 352, 214 )
-
-[node name="Button" parent="DoorAndButtons/DoorAndButton" index="0"]
-position = Vector2( 890, 166 )
-scale = Vector2( 1, 2.25 )
-
-[node name="Door" parent="DoorAndButtons/DoorAndButton" index="1"]
-position = Vector2( 644, 114 )
-
-[node name="DoorAndButton2" type="Node2D" parent="DoorAndButtons/DoorAndButton"]
-position = Vector2( -62, 400 )
+[node name="DoorAndButton" type="Node2D" parent="DoorAndButtons"]
+position = Vector2( 1099, 287 )
 script = ExtResource( 12 )
 
-[node name="Button" type="Sprite" parent="DoorAndButtons/DoorAndButton/DoorAndButton2"]
-position = Vector2( -64, 70 )
+[node name="Button" type="Sprite" parent="DoorAndButtons/DoorAndButton"]
+position = Vector2( 141, 93 )
 scale = Vector2( 1, 2 )
 texture = ExtResource( 15 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Button" type="StaticBody2D" parent="DoorAndButtons/DoorAndButton/DoorAndButton2/Button"]
+[node name="Button" type="StaticBody2D" parent="DoorAndButtons/DoorAndButton/Button"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAndButtons/DoorAndButton/DoorAndButton2/Button/Button"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAndButtons/DoorAndButton/Button/Button"]
 position = Vector2( 0, 1.625 )
 shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="DoorAndButtons/DoorAndButton/DoorAndButton2/Button"]
+[node name="Area2D" type="Area2D" parent="DoorAndButtons/DoorAndButton/Button"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAndButtons/DoorAndButton/DoorAndButton2/Button/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAndButtons/DoorAndButton/Button/Area2D"]
 position = Vector2( 0, -1 )
 shape = SubResource( 32 )
 
-[node name="Door" type="Sprite" parent="DoorAndButtons/DoorAndButton/DoorAndButton2"]
-position = Vector2( -60, -558 )
+[node name="Door" type="Sprite" parent="DoorAndButtons/DoorAndButton"]
+position = Vector2( -117, 42 )
 texture = ExtResource( 16 )
 hframes = 10
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Door" type="StaticBody2D" parent="DoorAndButtons/DoorAndButton/DoorAndButton2/Door"]
+[node name="Door" type="StaticBody2D" parent="DoorAndButtons/DoorAndButton/Door"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAndButtons/DoorAndButton/DoorAndButton2/Door/Door"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAndButtons/DoorAndButton/Door/Door"]
 position = Vector2( 1, 0 )
 shape = SubResource( 33 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="DoorAndButtons/DoorAndButton/DoorAndButton2"]
-anims/ButtonDown = SubResource( 34 )
-anims/ButtonUp = SubResource( 35 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DoorAndButtons/DoorAndButton"]
 anims/DoorClosed = SubResource( 36 )
 anims/DoorOpen = SubResource( 37 )
 anims/RESET = SubResource( 38 )
-
-[node name="DoorAndButton2" type="Node2D" parent="DoorAndButtons"]
-position = Vector2( 438, 400 )
-script = ExtResource( 12 )
-
-[node name="Button" type="Sprite" parent="DoorAndButtons/DoorAndButton2"]
-position = Vector2( -94, 44 )
-scale = Vector2( 1, 2 )
-texture = ExtResource( 15 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Button" type="StaticBody2D" parent="DoorAndButtons/DoorAndButton2/Button"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAndButtons/DoorAndButton2/Button/Button"]
-position = Vector2( 0, 1.625 )
-shape = SubResource( 80 )
-
-[node name="Area2D" type="Area2D" parent="DoorAndButtons/DoorAndButton2/Button"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAndButtons/DoorAndButton2/Button/Area2D"]
-position = Vector2( 0, -1 )
-shape = SubResource( 81 )
-
-[node name="Door" type="Sprite" parent="DoorAndButtons/DoorAndButton2"]
-position = Vector2( -30, 55 )
-rotation = 1.5708
-texture = ExtResource( 16 )
-hframes = 10
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Door" type="StaticBody2D" parent="DoorAndButtons/DoorAndButton2/Door"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAndButtons/DoorAndButton2/Door/Door"]
-position = Vector2( 1, 0 )
-shape = SubResource( 82 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="DoorAndButtons/DoorAndButton2"]
-anims/ButtonDown = SubResource( 83 )
-anims/ButtonUp = SubResource( 84 )
-anims/DoorClosed = SubResource( 85 )
-anims/DoorOpen = SubResource( 86 )
-anims/RESET = SubResource( 87 )
-
-[node name="DoorAndButton3" type="Node2D" parent="DoorAndButtons"]
-position = Vector2( 431, 563 )
-script = ExtResource( 12 )
-
-[node name="Button" type="Sprite" parent="DoorAndButtons/DoorAndButton3"]
-position = Vector2( -101, -7 )
-scale = Vector2( 1, 2 )
-texture = ExtResource( 15 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Button" type="StaticBody2D" parent="DoorAndButtons/DoorAndButton3/Button"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAndButtons/DoorAndButton3/Button/Button"]
-position = Vector2( 0, 1.625 )
-shape = SubResource( 89 )
-
-[node name="Area2D" type="Area2D" parent="DoorAndButtons/DoorAndButton3/Button"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAndButtons/DoorAndButton3/Button/Area2D"]
-position = Vector2( 0, -1 )
-shape = SubResource( 90 )
-
-[node name="Door" type="Sprite" parent="DoorAndButtons/DoorAndButton3"]
-position = Vector2( 7, 113 )
-texture = ExtResource( 16 )
-hframes = 10
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Door" type="StaticBody2D" parent="DoorAndButtons/DoorAndButton3/Door"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAndButtons/DoorAndButton3/Door/Door"]
-position = Vector2( 1, 0 )
-shape = SubResource( 91 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="DoorAndButtons/DoorAndButton3"]
-anims/ButtonDown = SubResource( 92 )
-anims/ButtonUp = SubResource( 93 )
-anims/DoorClosed = SubResource( 94 )
-anims/DoorOpen = SubResource( 95 )
-anims/RESET = SubResource( 96 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -2470,7 +1953,7 @@ position = Vector2( 151, 678 )
 position = Vector2( 165, 678 )
 
 [node name="SavePoint7" parent="Savepoints" instance=ExtResource( 9 )]
-position = Vector2( 1227, 375 )
+position = Vector2( 1224, 374 )
 
 [node name="SavePoint8" parent="Savepoints" instance=ExtResource( 9 )]
 position = Vector2( 473, 358 )
@@ -2485,7 +1968,7 @@ position = Vector2( 506, 678 )
 position = Vector2( 1065, 535 )
 
 [node name="SavePoint12" parent="Savepoints" instance=ExtResource( 9 )]
-position = Vector2( 525, 439 )
+position = Vector2( 519, 440 )
 
 [node name="SpikeTraps" type="Node2D" parent="."]
 
@@ -2821,9 +2304,50 @@ position = Vector2( 321, 468 )
 [node name="Coin7" parent="Coins" instance=ExtResource( 33 )]
 position = Vector2( 575, 516 )
 
-[connection signal="body_entered" from="DoorAndButtons/DoorAndButton/DoorAndButton2/Button/Area2D" to="DoorAndButtons/DoorAndButton/DoorAndButton2" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="DoorAndButtons/DoorAndButton2/Button/Area2D" to="DoorAndButtons/DoorAndButton2" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="DoorAndButtons/DoorAndButton3/Button/Area2D" to="DoorAndButtons/DoorAndButton3" method="_on_Area2D_body_entered"]
+[node name="DoorAndButton" type="Node2D" parent="."]
+position = Vector2( 183, 425 )
+script = ExtResource( 12 )
+
+[node name="Button" type="Sprite" parent="DoorAndButton"]
+position = Vector2( 54, 259 )
+scale = Vector2( 1, 2 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button" type="StaticBody2D" parent="DoorAndButton/Button"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAndButton/Button/Button"]
+position = Vector2( 0, 1.625 )
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="DoorAndButton/Button"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAndButton/Button/Area2D"]
+position = Vector2( 0, -1 )
+shape = SubResource( 32 )
+
+[node name="Door" type="Sprite" parent="DoorAndButton"]
+position = Vector2( 44, -369 )
+texture = ExtResource( 16 )
+hframes = 10
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Door" type="StaticBody2D" parent="DoorAndButton/Door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorAndButton/Door/Door"]
+position = Vector2( 1, 0 )
+shape = SubResource( 33 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DoorAndButton"]
+anims/DoorClosed = SubResource( 36 )
+anims/DoorOpen = SubResource( 37 )
+anims/RESET = SubResource( 38 )
+
+[connection signal="body_entered" from="DoorAndButtons/DoorAndButton/Button/Area2D" to="DoorAndButtons/DoorAndButton" method="_on_Area2D_body_entered"]
 [connection signal="area_entered" from="SpitterTraps/SpikeSpitters/SpikeSpitter/SpikeEnd" to="SpitterTraps/SpikeSpitters/SpikeSpitter" method="_on_SpikeEnd_area_entered"]
 [connection signal="area_entered" from="SpitterTraps/SpikeSpitters/SpikeSpitter2/SpikeEnd" to="SpitterTraps/SpikeSpitters/SpikeSpitter2" method="_on_SpikeEnd_area_entered"]
 [connection signal="area_entered" from="SpitterTraps/SpikeSpitters/SpikeSpitter3/SpikeEnd" to="SpitterTraps/SpikeSpitters/SpikeSpitter3" method="_on_SpikeEnd_area_entered"]
@@ -2831,5 +2355,4 @@ position = Vector2( 575, 516 )
 [connection signal="area_entered" from="SpitterTraps/FireballSpitters/FireBallSpitter3/FireBallEnd" to="SpitterTraps/FireballSpitters/FireBallSpitter3" method="_on_FireBallEnd_area_entered"]
 [connection signal="area_entered" from="SpitterTraps/FireballSpitters/FireBallSpitter4/FireBallEnd" to="SpitterTraps/FireballSpitters/FireBallSpitter4" method="_on_FireBallEnd_area_entered"]
 [connection signal="area_entered" from="SpitterTraps/FireballSpitters/FireBallSpitter/FireBallEnd" to="SpitterTraps/FireballSpitters/FireBallSpitter" method="_on_FireBallEnd_area_entered"]
-
-[editable path="DoorAndButtons/DoorAndButton"]
+[connection signal="body_entered" from="DoorAndButton/Button/Area2D" to="DoorAndButton" method="_on_Area2D_body_entered"]

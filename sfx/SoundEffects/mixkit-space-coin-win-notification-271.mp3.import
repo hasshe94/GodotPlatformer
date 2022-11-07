@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mixkit-space-coin-win-notification-271.mp3-9eeff2612a9a5dd11ddc0a5f09c5efe0.mp3str"
+
+[deps]
+
+source_file="res://sfx/SoundEffects/mixkit-space-coin-win-notification-271.mp3"
+dest_files=[ "res://.import/mixkit-space-coin-win-notification-271.mp3-9eeff2612a9a5dd11ddc0a5f09c5efe0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
