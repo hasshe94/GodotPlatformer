@@ -7,7 +7,6 @@ func close_doors():
 	dooropen = false
 
 func _ready():
-	$AnimationPlayer.play("ButtonUp")
 	$AnimationPlayer.play("DoorClosed")
 	
 	
