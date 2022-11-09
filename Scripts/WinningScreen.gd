@@ -25,7 +25,7 @@ func handle_selection(_current_selection):
 		get_tree().change_scene("res://Scenes/MainMenu.tscn")
 		queue_free()
 	elif _current_selection == 1:
-		get_tree().change_scene("res://Scenes/World.tscn")
+		get_tree().change_scene("res://Scenes/Credits.tscn")
 	elif _current_selection == 2:
 		get_tree().quit()
 
